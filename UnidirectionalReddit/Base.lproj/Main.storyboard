@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oiZ-XA-oiW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reddit-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UnidirectionalReddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="subreddit" translatesAutoresizingMaskIntoConstraints="NO" id="WBz-z3-exC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="e02-hw-XbT"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NkB-u3-ctl">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VeG-b9-OCs"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="46p-Nx-rfp"/>
+                                </connections>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVs-PL-Xzq">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5gG-47-HyA">
+                                        <rect key="frame" x="166.5" y="255.5" width="42" height="48.5"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2UG-kd-zOP">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="20"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdQ-2t-2ce">
+                                                <rect key="frame" x="0.0" y="28" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5gG-47-HyA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oVs-PL-Xzq" secondAttribute="leading" constant="8" id="DFH-b1-lAm"/>
+                                    <constraint firstItem="5gG-47-HyA" firstAttribute="centerY" secondItem="oVs-PL-Xzq" secondAttribute="centerY" id="IeA-ga-qH5"/>
+                                    <constraint firstItem="5gG-47-HyA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oVs-PL-Xzq" secondAttribute="top" constant="8" id="Ki8-zl-thf"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5gG-47-HyA" secondAttribute="bottom" constant="8" id="e2D-r2-Ifi"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5gG-47-HyA" secondAttribute="trailing" constant="8" id="gYp-E5-COD"/>
+                                    <constraint firstItem="5gG-47-HyA" firstAttribute="centerX" secondItem="oVs-PL-Xzq" secondAttribute="centerX" id="lPW-Pb-Xim"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oVs-PL-Xzq" secondAttribute="bottom" id="3j2-iL-CoH"/>
+                            <constraint firstAttribute="trailing" secondItem="oVs-PL-Xzq" secondAttribute="trailing" id="3z2-wu-KEU"/>
+                            <constraint firstItem="WBz-z3-exC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Czh-eE-mub"/>
+                            <constraint firstAttribute="bottom" secondItem="NkB-u3-ctl" secondAttribute="bottom" id="Wso-M0-eqA"/>
+                            <constraint firstAttribute="trailing" secondItem="WBz-z3-exC" secondAttribute="trailing" id="ZIX-jf-beX"/>
+                            <constraint firstAttribute="trailing" secondItem="NkB-u3-ctl" secondAttribute="trailing" id="ZU9-Bu-a4Q"/>
+                            <constraint firstItem="WBz-z3-exC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="geA-zv-0vQ"/>
+                            <constraint firstItem="NkB-u3-ctl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kFC-5M-huA"/>
+                            <constraint firstItem="NkB-u3-ctl" firstAttribute="top" secondItem="WBz-z3-exC" secondAttribute="bottom" id="o1S-Su-gno"/>
+                            <constraint firstItem="oVs-PL-Xzq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sRO-EB-g8g"/>
+                            <constraint firstItem="oVs-PL-Xzq" firstAttribute="top" secondItem="WBz-z3-exC" secondAttribute="bottom" id="upX-7e-X7i"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reddit" id="b1p-ey-Q8j"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="2UG-kd-zOP" id="zqN-fn-fdm"/>
+                        <outlet property="searchBar" destination="WBz-z3-exC" id="yBX-05-s0T"/>
+                        <outlet property="statusLabel" destination="gdQ-2t-2ce" id="QCE-0P-LC1"/>
+                        <outlet property="statusView" destination="oVs-PL-Xzq" id="d44-hI-JZ2"/>
+                        <outlet property="tableView" destination="NkB-u3-ctl" id="i0K-RB-w5j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="914" y="-544"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hjw-Bv-3m9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oiZ-XA-oiW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d95-7c-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sLc-Hn-oS2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBH-Z5-7UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197.59999999999999" y="-543.77811094452773"/>
+        </scene>
+    </scenes>
+</document>
